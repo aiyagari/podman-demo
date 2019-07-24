@@ -7,7 +7,8 @@ RUN sudo yum -y update && \
 
 # Enable python and install pygame
     source /opt/rh/rh-python36/enable && \
-    sudo pip install -r requirements.txt && \
+    echo ${PATH} && \
+    pip install -r requirements.txt && \
 
 # Configure git
     git config --global user.name "Sanjay Aiyagari" && \
