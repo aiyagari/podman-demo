@@ -3,11 +3,11 @@ FROM quay.io/openshiftio/che-centos_python
 
 # Basic system hygiene
 RUN sudo yum -y update && \
-    sudo yum -y upgrade && \
+#    sudo yum -y upgrade && \
 
 # Enable python and install pygame
     source /opt/rh/rh-python36/enable && \
-    echo ${0} && \
+    echo "$@" && \
     pip install -r requirements.txt && \
 
 # Configure git
