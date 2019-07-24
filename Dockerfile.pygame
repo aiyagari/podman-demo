@@ -1,0 +1,17 @@
+# Base the image on python
+FROM quay.io/openshiftio/che-centos_python
+
+# Basic system hygiene
+RUN sudo yum -y update && \
+    sudo yum -y upgrade && \
+
+# Now install pygame
+    sudo yum -y install python-pygame && \
+
+# Configure git
+    git config --global user.name "Sanjay Aiyagari" && \
+    git config --global user.email ska1@cornell.edu
+
+# IMPORTANT: The Dockerfile has to end with a non-terminating CMD. This works
+# as well as any....
+CMD tail -f /dev/null 
